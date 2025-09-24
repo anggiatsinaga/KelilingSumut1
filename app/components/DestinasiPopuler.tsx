@@ -5,7 +5,7 @@ const destinasi = [
   { name: "Pulau Samosir", img: "/images/viewbg.jpg" },
 ];
 import { FaArrowRight } from "react-icons/fa";
-
+import Image from "next/image"
 export default function DestinasiPopuler() {
   return (
     <section id="destinasi" className="py-16 container mx-auto px-6 md:px-24">
@@ -23,9 +23,10 @@ export default function DestinasiPopuler() {
       <div className="grid md:grid-cols-3 gap-6">
         {destinasi.map((d, i) => (
           <div key={i} className="overflow-hidden shadow-lg relative group">
-            <img
+            <Image
               src={d.img}
               alt={d.name}
+              fill
               className="w-full h-[450px] object-cover transition-transform duration-500 group-hover:h-115 group-hover:-mt-4 group-hover:mb-4"
             />
             <div className="absolute bottom-0 left-0 w-full h-1/4 bg-black/40 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
